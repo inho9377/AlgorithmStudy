@@ -11,6 +11,7 @@ function solution(N, K){
         }
         nArr.splice(index, 1);
         index += K;
+        index -= 1;
     }   
     
     return nArr;
