@@ -27,7 +27,7 @@ function sol(graph, n, visited, end){
     //of는 요소, in은 순서 반환
     for(let next_node in graph[node]){
         n.push(graph[node][next_node]);
-        max.push(length, solution(n, visited));
+        max.push(length, sol(graph, n, visited, end));
         length = Math.max.apply(null, max);
 
         queue.pop();

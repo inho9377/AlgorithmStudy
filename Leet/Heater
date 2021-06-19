@@ -1,0 +1,14 @@
+class Solution {
+  public static int solve(int[] homes, int[] heaters) {
+    Arrays.sort(homes);
+    Arrays.sort(heaters);
+    int hmi = 0;
+    int hti = 0;
+    int ret = 0; 
+    for(;hmi < homes.length; hmi++) {
+      while(hti + 1 < heaters.length && Math.abs(heaters[hti + 1] - homes[hmi]) <= Math.abs(heaters[hti] - homes[hmi])) hti++;
+      ret = Math.max(ret, Math.abs(heaters[hti] - homes[hmi]));
+    }
+    return ret;
+  }
+}
